@@ -1,0 +1,24 @@
+<article  class="article article-card-home" (click)="setId(idInput)">
+
+    <div class="div-img">
+        <img [src]="imageLinks"
+            alt="Image Book">
+    </div>
+
+    <div class="div-text">
+        <div class="title"><span>{{title}}</span></div>
+        <div class="authors"><span>{{authors}}</span></div>
+
+        <div class="rate"><span class="span-star" >
+<app-card-star
+[rate]="averageRating"
+></app-card-star>
+        </span></div>
+
+        <div class="description">{{description}}</div>
+    </div>
+    
+<!-- {{averageRating}} -->
+
+</article>
+

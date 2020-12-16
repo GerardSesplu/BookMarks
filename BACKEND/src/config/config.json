@@ -1,0 +1,9 @@
+{
+  "development": {
+    "username": "root",
+    "password": "rrrooottt",
+    "database": "database_bookmarcks_def",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}

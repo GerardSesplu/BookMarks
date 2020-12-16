@@ -1,0 +1,136 @@
+* {
+  margin: 0%;
+  padding: 0%;
+}
+
+.article {
+  display: flex;
+  flex-direction: row;
+  width: 30em;
+  height: 12.19em;
+
+  margin: 1em;
+  background-color: rgb(255, 255, 255);
+
+  border-radius: 0.3em;
+
+  -webkit-box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.35);
+  -moz-box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.35);
+  box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.35);
+
+  user-select: none;
+  transition-duration: 100ms;
+  overflow: hidden;
+}
+.article:hover {
+  cursor: pointer;
+  transform: scale(1.02, 1.02);
+}
+.article:active {
+  cursor: pointer;
+  transform: scale(1.05, 1.05);
+  transition-duration: 50ms;
+}
+
+.div-img {
+  width: 8em;
+  height: 12.19em;
+
+  border-top-left-radius: 0.3em;
+  border-bottom-left-radius: 0.3em;
+}
+img {
+  width: 8em;
+  height: 12.19em;
+
+  border-top-left-radius: 0.3em;
+  border-bottom-left-radius: 0.3em;
+}
+
+.div-text {
+  display: flex;
+  width: auto;
+  height: auto;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+
+  margin: 1em;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 1.1em;
+}
+
+.authors {
+  color: cadetblue;
+  font-weight: 500;
+  font-size: 1em;
+}
+.rate {
+}
+
+.description {
+  text-align: justify;
+  color: black;
+}
+
+.span-star {
+  color: rgb(255, 187, 0);
+}
+
+
+
+/* ----------------------------------------Reponsive---------------------------------------------------------------------------------- */
+
+@media (max-width: 530px) {
+
+  .article {
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    height: 12.19em;
+
+    margin: 1em;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(255, 255, 255);
+
+    border-radius: 0.3em;
+
+    -webkit-box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.35);
+    -moz-box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.35);
+    box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.35);
+
+    user-select: none;
+    transition-duration: 100ms;
+    overflow: hidden;
+  }
+
+
+
+
+  .title {
+    font-weight: 600;
+    font-size: 1em;
+  }
+  
+  .authors {
+    color: cadetblue;
+    font-weight: 500;
+    font-size: 0.8em;
+  }
+  .rate {
+  }
+  
+  .description {
+    text-align: justify;
+    color: black;
+    font-size: 0.8em;
+  }
+
+
+  
+  
+}

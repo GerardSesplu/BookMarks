@@ -1,0 +1,117 @@
+.profile{
+    display: grid;
+    grid-template-columns: 75% 25%;
+    height: 1000px;
+    width: 100%;
+}
+
+.profile-info{
+    background-color: rgb(83, 83, 83);
+    
+    box-shadow: 3px 0px 44px -6px rgba(71,70,71,1);
+
+}
+
+#profile-img{
+    width: 15em;
+    height: 15em;
+    display: block;
+    
+  
+    border-radius: 50%;
+    justify-self: end;
+    -webkit-box-shadow: 0px 0px 24px 0px rgba(41,41,41,1);
+    -moz-box-shadow: 0px 0px 24px 0px rgba(41,41,41,1);
+    box-shadow: 0px 0px 24px 0px rgba(41,41,41,1);
+
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2em;
+}
+
+/*FORMULARIO*/
+
+form{
+    width: 80%;
+    margin: auto;
+    margin-top: 3em;
+    
+}
+
+#user-info{
+
+    display: grid;
+    min-width: 10em;
+    
+}
+
+input{
+    color: white;
+    margin-bottom: 12px;
+    background-color: rgb(83, 83, 83);
+    border: none;
+    font-family: 'Pathway Gothic One', sans-serif;
+    font-size: 18px;
+    
+}
+
+#input-first-name{
+    font-size: 38px
+}
+#input-last-name{
+    margin-top: 0;
+    font-size: 38px;
+}
+
+#buttons-div{
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 50% 25% 25%;
+}
+
+button{
+    height: 2em;
+    border-radius: 5px;
+    margin-left: 5px;
+    font-family: 'Pathway Gothic One', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    
+}
+
+#change-button{
+    color:  rgb(33, 253, 216);
+    border: 2px solid  rgb(33, 253, 216);
+    background-color: rgb(83, 83, 83);
+}
+
+#send-button{
+    background-color:  rgb(33, 253, 216);
+    border: 0;
+    color: rgb(83, 83, 83);
+}
+
+/*Books Lists*/
+
+#favourite-books{
+    height: 15em;
+    padding: 10px;
+    font-family: 'Pathway Gothic One', sans-serif;
+}
+
+#to-read-books{
+    height: 15em;
+    padding: 10px;
+    font-family: 'Pathway Gothic One', sans-serif;
+}
+
+#readed-books{
+    height: 15em;
+    padding: 10px;
+    font-family: 'Pathway Gothic One', sans-serif;
+}
+
+h2{
+    font-family: 'Pathway Gothic One', sans-serif;
+    font-size: 20px;
+}

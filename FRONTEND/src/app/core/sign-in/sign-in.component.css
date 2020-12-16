@@ -1,0 +1,104 @@
+* {
+  padding: 0%;
+  margin: 0%;
+}
+
+.section-sign-in {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  height: 100%;
+  background: url("/assets/images/bg-login.png");
+  background-position: center top;
+  background-repeat:repeat-x; 
+  
+}
+.div-img-sign-in {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 0, 0, 0);
+  background-size: 100% 100%;
+}
+
+.title-sign-in{
+  font-weight: 500;
+  font-family: 'Big Shoulders Stencil Text', cursive;
+  font-size: 3em;
+  margin-bottom: 0.6em;
+  margin-top: 1em;
+}
+
+.div-form-sign-in {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 50em;
+  height: 100%;
+  padding-left: 2em;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 1) 0%,
+    rgb(255, 255, 255, 1) 100%
+  );
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.712);
+}
+.form-sign-in {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 90%;
+  height: 100%;
+ 
+}
+
+mat-form-field {
+  margin: 0.5em;
+  width: 18em;
+}
+
+.bt-sign-in-submit {
+  width: 18em;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  outline-style: none;
+}
+
+mat-radio-group {
+  margin-top: 1em;
+}
+
+mat-radio-group > mat-radio-button {
+  margin-left: 2em;
+}
+
+@media (max-width: 500px) {
+  .div-img-sign-in {
+    display: none;
+  }
+
+  .div-form-sign-in {
+    width: 100%;
+  }
+
+  mat-form-field {
+    width: 90%;
+  }
+
+  .bt-sign-in-submit {
+    width: 90%;
+    margin-top: 2em;
+    outline-style: none;
+  }
+}
+
+.no-select {
+  outline-style: none;
+}
+
+::ng-deep mat-datepicker-toggle > button {
+  outline-style: none !important;
+}

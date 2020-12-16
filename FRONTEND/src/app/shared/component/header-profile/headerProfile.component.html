@@ -1,0 +1,60 @@
+
+<header>
+    
+    <div *ngIf="!reponsive" class="div-header-main">
+        <div routerLink="/" class="title">
+            <h1>BOOKMARKS</h1>
+            <i class="far fa-bookmark"></i>
+        </div>
+
+        <!-- <div class="profile" *ngIf="false">
+            
+            <p id="profile-name">User name</p>
+            <div id="profile-img"></div>
+
+        </div> -->
+        <div class="login" *ngIf="true">
+            
+            <p routerLink="/sign-in" class="register-link">{{profileName}}</p>
+            <img id="profile-img" src="../../../../assets/images/default-profile-img/proust-profile-default-img.jpeg" alt="" a>
+
+        </div>
+
+    </div>
+   
+    <!-- --------------------------------------reponsive----------------------------------------- -->
+
+    <div *ngIf="reponsive" class="div-header-reponsive">
+
+
+        <mat-toolbar color="primary">
+
+            <mat-toolbar-row>
+                <button class="button-icon-menu" *ngIf="!panelOpenState" mat-icon-button >
+                    <mat-icon (click)="openRouter()" class="icon-menu">menu</mat-icon>
+                  </button>
+
+                  <button class="button-icon-menu"  *ngIf="panelOpenState" mat-icon-button >
+                    <mat-icon (click)="openRouter()" class="icon-menu">highlight_off</mat-icon>
+                  </button>
+
+                  <span routerLink="/" >BookMark</span>
+              </mat-toolbar-row>
+                
+          </mat-toolbar>
+
+          <div class="div-routes" *ngIf="panelOpenState">
+
+            <ul class="ul-1">
+                <li><p (click)="openRouter()" routerLink="/home" routerLinkActive="active">Home</p></li>
+                <li><p (click)="openRouter()" routerLink="/profile" routerLinkActive="active">Profile</p></li>
+                <li><p (click)="openRouter()" routerLink="/login" routerLinkActive="active">Login</p></li>
+                <li><p (click)="openRouter()" routerLink="/sign-in" routerLinkActive="active">Sign In</p></li>
+            </ul>
+
+          </div>
+          
+
+    </div>
+
+</header>

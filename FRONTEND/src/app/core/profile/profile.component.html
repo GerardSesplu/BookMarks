@@ -1,0 +1,53 @@
+<div class="profile">
+    <div class="books-list">
+
+        <div id="favourite-books">
+            <h2>Favourite Books</h2>
+            <!-- <app-card-profile *ngFor="let book of bookHome.recomendados" [title]="book.title"
+            [publishedDate]="book.publishedDate" [imageLinks]="book.imageLinks.thumbnail"
+            [description]="(book.description).substring(0,100)+'...'" [authors]="book.authorss"
+            [averageRating]="book.averageRating" [idInput]="book.id" (id)="getId($event)">
+        </app-card-profile> -->
+        </div>
+        <div id="to-read-books">
+            <h2>To Read Books</h2>
+        </div>
+        <div id="readed-books">
+            <h2>Readed Books</h2>
+        </div>
+
+    </div>
+    <div class="profile-info">
+        <img id="profile-img" src="../../../assets/images/default-profile-img/proust-profile-default-img.jpeg" alt="">
+        
+        <div id="profile-config-form">
+            <form #userProfileForm="ngForm" (ngSubmit)="saveChanges(userProfileForm)">
+
+                <div id="user-info">
+
+                    <input type="text" id="input-first-name" name="firstName" [(ngModel)]="firstName" pattern="^[a-z0-9_-]{8,15}$">
+
+                    <input type="text" id="input-last-name" name="lastName" [(ngModel)]="lastName" pattern="^[a-z0-9_-]{8,15}$">
+
+                    <input type="text" id="input-phone" name="phoneNumber" [(ngModel)]="phoneNumber" pattern="^[0-9]{9-10}$">
+
+                    <input type="text" id="input-email" name="email" [(ngModel)]="email" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+
+                    <input type="text" id="input-birth-date" name="birthDate" [(ngModel)]="birthDate" >
+
+                    <input type="password" id="input-password" name="password" [(ngModel)]="password" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).{6,12}$">
+
+                </div>
+
+                <div id="buttons-div">
+
+                    <div id="empty-div"></div>
+                    <button id="change-button" type="button">Change</button>
+                    <button id="send-button" type="submit">Send</button>
+
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,242 @@
+<mat-drawer-container class="sidenav" hasBackdrop="false">
+    <mat-drawer position="start"  #drawer mode="over" autosize>
+
+        <div class="div-form">
+            
+
+            <form (submit)="saveForm();" [formGroup]="formg">
+
+
+                <div class="div-form-buttons">
+                    <div class="div-title-form"><h1 class="title-form">Find your book</h1></div>
+                    
+
+                    <mat-form-field [appearance]="appearance" class="name-form">
+                        <mat-label>Title</mat-label>
+                        <input type="text" matInput formControlName="title" placeholder="title">
+                        <mat-error *ngIf="invaTitle">
+                            please enter a title.
+                        </mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field [appearance]="appearance" class="name-form">
+                        <mat-label>Author</mat-label>
+                        <input type="text" matInput formControlName="author" placeholder="Author">
+                    </mat-form-field>
+
+                    <mat-form-field [appearance]="appearance" class="name-form">
+                        <mat-label>Publication date</mat-label>
+                        <input type="text" matInput formControlName="publication" placeholder="2005-05">
+                    </mat-form-field>
+
+                    <mat-form-field [appearance]="appearance" class="name-form">
+                        <mat-label>Genre</mat-label>
+                        <input type="text" matInput formControlName="categories" placeholder="Action">
+                    </mat-form-field>
+
+                    <div class="div-button">
+                        <button (click)="closeDrawer(drawer)" class="button-form" type="submit" mat-raised-button color="primary">Search</button>
+                    </div>
+                </div>
+
+
+
+
+
+            </form>
+
+        </div>
+
+
+    </mat-drawer>
+
+
+    <mat-drawer-content>
+
+        <div *ngIf="!iconSearch && !iconHide" class="icon-search">
+            <mat-icon (click)="drawer.toggle();iconSearch=!iconSearch" aria-hidden="false" aria-label="search icon">
+                search</mat-icon>
+        </div>
+        <div *ngIf="iconSearch" class="icon-search">
+            <mat-icon  (click)="drawer.toggle();iconSearch=!iconSearch"
+                aria-hidden="false" aria-label="close icon">highlight_off</mat-icon>
+        </div>
+
+        <div *ngIf="!activeSearch">
+            <section class="section" *ngIf="show">
+
+                <div (click)="animTitle($event)" class="title-card-home">
+                    <h1>Recomendados</h1>
+                </div>
+
+                <div class="div-card">
+                    <app-card-home *ngFor="let book of bookHome.recomendados" [title]="book.title"
+                        [publishedDate]="book.publishedDate" [imageLinks]="book.imageLinks.thumbnail"
+                        [description]="(book.description).substring(0,100)+'...'" [authors]="book.authorss"
+                        [averageRating]="book.averageRating" [idInput]="book.id" (id)="getId($event)">
+                    </app-card-home>
+
+                </div>
+            </section>
+
+
+            <section class="section" *ngIf="show1">
+
+                <div (click)="animTitle($event)" class="title-card-home">
+                    <h1>Populares</h1>
+                </div>
+
+
+                <div class="div-card">
+                    <app-card-home *ngFor="let book of bookHome.populares" [title]="book.title"
+                        [publishedDate]="book.publishedDate" [imageLinks]="book.imageLinks.thumbnail"
+                        [description]="(book.description).substring(0,100)+'...'" [authors]="book.authorss"
+                        [averageRating]="book.averageRating" [idInput]="book.id" (id)="getId($event)">
+                    </app-card-home>
+
+                </div>
+            </section>
+
+
+            <section class="section" *ngIf="show2">
+
+                <div (click)="animTitle($event)" class="title-card-home">
+                    <h1>Mas vendidos</h1>
+                </div>
+
+
+                <div class="div-card">
+                    <app-card-home *ngFor="let book of bookHome.masVendidos" [title]="book.title"
+                        [publishedDate]="book.publishedDate" [imageLinks]="book.imageLinks.thumbnail"
+                        [description]="(book.description).substring(0,100)+'...'" [authors]="book.authorss"
+                        [averageRating]="book.averageRating" [idInput]="book.id" (id)="getId($event)">
+                    </app-card-home>
+
+                </div>
+            </section>
+
+            <section class="section" *ngIf="show3">
+
+                <div (click)="animTitle($event)" class="title-card-home">
+                    <h1>Novelas</h1>
+                </div>
+
+
+                <div class="div-card">
+                    <app-card-home *ngFor="let book of bookHome.novelas" [title]="book.title"
+                        [publishedDate]="book.publishedDate" [imageLinks]="book.imageLinks.thumbnail"
+                        [description]="(book.description).substring(0,100)+'...'" [authors]="book.authorss"
+                        [averageRating]="book.averageRating" [idInput]="book.id" (id)="getId($event)">
+                    </app-card-home>
+
+                </div>
+            </section>
+
+            <section class="section" *ngIf="show4">
+
+                <div (click)="animTitle($event)" class="title-card-home">
+                    <h1>Fantasia</h1>
+                </div>
+
+
+                <div class="div-card">
+                    <app-card-home *ngFor="let book of bookHome.fantasia" [title]="book.title"
+                        [publishedDate]="book.publishedDate" [imageLinks]="book.imageLinks.thumbnail"
+                        [description]="(book.description).substring(0,100)+'...'" [authors]="book.authorss"
+                        [averageRating]="book.averageRating" [idInput]="book.id" (id)="getId($event)">
+                    </app-card-home>
+
+                </div>
+            </section>
+
+            <section class="section" *ngIf="show5">
+
+                <div (click)="animTitle($event)" class="title-card-home">
+                    <h1>Ciencia Ficción</h1>
+                </div>
+
+
+                <div class="div-card">
+                    <app-card-home *ngFor="let book of bookHome.cienciaFiccion" [title]="book.title"
+                        [publishedDate]="book.publishedDate" [imageLinks]="book.imageLinks.thumbnail"
+                        [description]="(book.description).substring(0,100)+'...'" [authors]="book.authorss"
+                        [averageRating]="book.averageRating" [idInput]="book.id" (id)="getId($event)">
+                    </app-card-home>
+
+                </div>
+            </section>
+
+            <section class="section" *ngIf="show6">
+
+                <div (click)="animTitle($event)" class="title-card-home">
+                    <h1>Románticas</h1>
+                </div>
+
+
+                <div class="div-card">
+                    <app-card-home *ngFor="let book of bookHome.romanticas" [title]="book.title"
+                        [publishedDate]="book.publishedDate" [imageLinks]="book.imageLinks.thumbnail"
+                        [description]="(book.description).substring(0,100)+'...'" [authors]="book.authorss"
+                        [averageRating]="book.averageRating" [idInput]="book.id" (id)="getId($event)">
+                    </app-card-home>
+
+                </div>
+            </section>
+
+            <section class="section" *ngIf="show7">
+
+                <div (click)="animTitle($event)" class="title-card-home">
+                    <h1>Aventuras</h1>
+                </div>
+
+
+                <div class="div-card">
+                    <app-card-home *ngFor="let book of bookHome.aventuras" [title]="book.title"
+                        [publishedDate]="book.publishedDate" [imageLinks]="book.imageLinks.thumbnail"
+                        [description]="(book.description).substring(0,100)+'...'" [authors]="book.authorss"
+                        [averageRating]="book.averageRating" [idInput]="book.id" (id)="getId($event)">
+                    </app-card-home>
+
+                </div>
+            </section>
+
+            <section class="section" *ngIf="show8">
+
+                <div (click)="animTitle($event)" class="title-card-home">
+                    <h1>Terror</h1>
+                </div>
+
+
+                <div class="div-card">
+                    <app-card-home *ngFor="let book of bookHome.terror" [title]="book.title"
+                        [publishedDate]="book.publishedDate" [imageLinks]="book.imageLinks.thumbnail"
+                        [description]="(book.description).substring(0,100)+'...'" [authors]="book.authorss"
+                        [averageRating]="book.averageRating" [idInput]="book.id" (id)="getId($event)">
+                    </app-card-home>
+
+                </div>
+            </section>
+        </div>
+
+
+        <section class="section" *ngIf="activeSearch">
+
+            <div (click)="animTitle($event)" class="title-card-home">
+                <h1>Resultados de la busqueda</h1>
+            </div>
+
+            <div class="div-card">
+                <app-card-home *ngFor="let book of bookSeacrh" [title]="book.title" [publishedDate]="book.publishedDate"
+                    [imageLinks]="book.imageLinks.thumbnail" [description]="(book.description).substring(0,100)+'...'"
+                    [authors]="book.authorss" [averageRating]="book.averageRating" [idInput]="book.id"
+                    (id)="getId($event)">
+                </app-card-home>
+
+            </div>
+        </section>
+
+
+    </mat-drawer-content>
+
+
+</mat-drawer-container>

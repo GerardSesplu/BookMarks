@@ -1,0 +1,38 @@
+
+
+<section class="section-login">
+
+    <div class="div-login">
+<h1 class="title-login">Log In</h1>
+
+<form (submit)="saveForm()" [formGroup]="formg">
+    <mat-form-field [appearance]="appearance" class="email">
+      <mat-label >Email</mat-label>
+      <input type="email" matInput  formControlName="email"  
+       placeholder="myemail@example.com">
+      
+      <mat-error *ngIf="invaEmail">
+        Please enter a valid email.
+      </mat-error>
+    </mat-form-field>
+
+ 
+        <mat-form-field [appearance]="appearance"  class="password">
+          <mat-label>Enter your password</mat-label>
+          <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+          <button type="button" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+          <mat-error *ngIf="invaPassword">
+            Please enter a strong password of at least 6 characters. It must also contain at least one number and one uppercase.
+          </mat-error>
+        </mat-form-field>
+        <div [ngClass]="{'div-button-error': invaPassword}" class="div-button">
+          <mat-checkbox *ngIf="!reponsiveBool"  class="remember" [checked]="true" color="primary"  formControlName="remember">Remember me</mat-checkbox>
+          <button class="button-login" type="submit" mat-raised-button color="primary">Login</button></div>
+        
+        
+  </form>
+  <div class="text-login"><p routerLink="/forgot-password">Forgot password?</p> <p routerLink="/sign-in">Sign In</p> </div>
+</div>
+</section>

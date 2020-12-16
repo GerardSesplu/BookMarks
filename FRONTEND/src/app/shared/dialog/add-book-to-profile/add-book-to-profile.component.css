@@ -1,0 +1,19 @@
+.section-add-book{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-add-book > div{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+ 
+}
+
+.section-add-book > div > button{
+margin: 1em;
+outline-style: none;
+}

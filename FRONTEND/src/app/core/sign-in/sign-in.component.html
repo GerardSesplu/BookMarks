@@ -1,0 +1,89 @@
+
+<section class="section-sign-in">
+
+    
+
+    <div class="div-form-sign-in">
+
+
+        <form class="form-sign-in" [formGroup]="formg" (submit)="saveForm()" >
+            <h1 class="title-sign-in">Sign In</h1>
+            <article class="container-left-right">
+                <div class="left">
+                  <mat-form-field [appearance]="appearance">
+                    <mat-label>Name</mat-label>
+                    <input matInput placeholder="Write your name"   formControlName="name">
+                    <mat-error *ngIf="invaName">
+                      This field must have at least 3 characters.
+                    </mat-error>
+                  </mat-form-field>
+                
+                  <mat-form-field [appearance]="appearance">
+                      <mat-label>Lastname</mat-label>
+                      <input matInput placeholder="Write your lastname"  formControlName="lastname">
+                      <mat-error *ngIf="invaLastname">
+                          This field must have at least 3 characters.
+                        </mat-error>
+                    </mat-form-field>
+  
+                    <mat-form-field [appearance]="appearance">
+                      <mat-label>Phone number</mat-label>
+                      <input type="number" matInput placeholder="Write your phone number"  formControlName="phone">
+                      <mat-error *ngIf="invaPhone">
+                          This field must have at least 7 characters.
+                        </mat-error>
+                    </mat-form-field>
+          
+          
+                    <mat-form-field  [appearance]="appearance">
+                      <mat-label>Birthdate</mat-label>
+                      <input matInput placeholder="06/07/1995" [matDatepicker]="picker" formControlName="birthdate">
+                      <mat-datepicker-toggle  matSuffix [for]="picker"></mat-datepicker-toggle>
+                      <mat-datepicker  #picker color="primary"></mat-datepicker>
+                      <mat-error *ngIf="invabirthdate">
+                          Please enter a correct date. Ex: 06/07/1995.
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="right">
+                  <mat-form-field [appearance]="appearance">
+                    <mat-label>Email</mat-label>
+                    <input type="email" matInput placeholder="Write your email"  formControlName="email">
+                    <mat-error *ngIf="invaEmail">
+                        Please enter a valid email.
+                      </mat-error>
+                  </mat-form-field>
+        
+                  <mat-form-field [appearance]="appearance">
+                    <mat-label>Password</mat-label>
+                    <input matInput placeholder="Write your password" [type]="hidePass ? 'password' : 'text'"  formControlName="password">
+                    <button class="no-select" type="button" mat-icon-button matSuffix (click)="hidePass = !hidePass" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hidePass">
+                    <mat-icon>{{hidePass ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+                <mat-error *ngIf="invaPassword">
+                    Please enter a strong password of at least 6 characters. It must also contain at least one number and one uppercase.
+                  </mat-error>
+                  </mat-form-field>
+        
+              
+
+                  <mat-radio-group  formControlName="genre" aria-label="Select your genre">
+                    <mat-radio-button value="Male">Male</mat-radio-button>
+                    <mat-radio-button value="Female">Female</mat-radio-button>
+                    <mat-radio-button value="Other">Other</mat-radio-button>
+                  </mat-radio-group>
+        
+        
+        
+                  <button class="bt-sign-in-submit" mat-raised-button type="submit" color="primary">Sign In</button>
+                </div>
+                  
+        
+                  
+              </article>
+          </form>
+    </div>
+
+
+
+</section>

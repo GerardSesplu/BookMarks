@@ -1,0 +1,55 @@
+<article class="article-details" *ngIf="bookIsLoad">
+    <div class="article-details-in">
+        
+
+        <section [ngStyle]="!reponsiveBool?{'background-image': 'url('+book.imageLinks.medium+')'} : {'background-image': 'none'}" class="section-img">
+
+            <img *ngIf="reponsiveBool" [src]="book.imageLinks.medium" alt="Portada">
+
+           <div class="main-div-bt-details">
+                <button (click)="saveInProfileFav()" mat-fab color="warn" class="div_bt_add_details">
+                    <mat-icon class="bt_add_details">favorite_border</mat-icon>
+                </button>
+                <button (click)="saveInProfileToRead()" mat-fab color="warn" class="div_bt_add_details">
+                    <mat-icon class="bt_add_details">add</mat-icon>
+                </button>
+                <button (click)="saveInProfileReaded()" mat-fab color="warn" class="div_bt_add_details">
+                    <mat-icon class="bt_add_details">book</mat-icon>
+                </button>
+           </div>
+           
+        </section>
+        
+
+        <section class="section-details">
+
+            <div class="section-details-div title-details">
+                <h1>{{book.title}}<span *ngIf="book.subtitle.length > 0">, {{book.subtitle}}</span></h1>
+            </div>
+
+            <div class="section-details-div author-details">{{book.authors}}</div>
+            <div class="section-details-div publisher-details">{{book.publisher}}, {{book.publishedDate}}</div>
+
+            <div class="section-details-div">
+                <span class="span-star">
+                    <app-card-star [rate]="book.averageRating"></app-card-star>
+                </span></div>
+
+            <div class="section-details-div rating-details">Reseñas: {{book.ratingsCount}}</div>
+            <div class="section-details-div categories-details"><span>Categoría: &nbsp;</span>{{book.categories}}</div>
+
+            <div class="section-details-div page-details"><span>Nº de páginas:&nbsp;</span> {{book.pageCount}}</div>
+            <div class="section-details-div page-details"><span>Nº de páginas
+                    impresas:&nbsp;</span>{{book.printedPageCount}}</div>
+
+            <div class="section-details-div indusrty-details" *ngFor="let industry of book.industryIdentifiers">
+                <span>{{industry.type}}:&nbsp;</span>
+                {{industry.identifier}}</div>
+
+            <div class="section-details-div description-details" [innerHTML]="book.description"></div>
+
+        </section>
+
+
+    </div>
+</article>

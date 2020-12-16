@@ -1,0 +1,14 @@
+
+span{
+    font-weight: 500;
+    user-select: none;
+    outline-style: none;
+}
+span:hover{
+    font-weight: 600;
+    cursor: pointer;
+}
+span:active{
+    color: black !important;
+    font-size: 1.01em;
+}

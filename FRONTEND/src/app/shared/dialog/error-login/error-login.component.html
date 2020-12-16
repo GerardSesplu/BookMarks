@@ -1,0 +1,25 @@
+
+<div *ngIf="!data.blockForm">
+    <h2 mat-dialog-title  [ngClass]="'text-danger'">Attention!!</h2>
+<mat-dialog-content class="mat-typography">
+  <h3><strong>Failed to login</strong></h3>
+  <p>Currently you have <strong>{{data.attempts}}</strong> more attempts left, if you spend all your attempts you must wait 15 minutes before being able to access again</p> 
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+
+  <button mat-raised-button [mat-dialog-close]="true" cdkFocusInitial>Accept</button>
+</mat-dialog-actions>
+</div>
+
+
+<div *ngIf="data.blockForm">
+    <h2 mat-dialog-title  [ngClass]="'text-danger'">Attention!!</h2>
+    <mat-dialog-content class="mat-typography">
+      <h3><strong>You have exceeded the limit of attempts</strong></h3>
+      <p>Please wait 15 minutes, counting from the time the login was blocked, until you can try to enter again.</p> 
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+    
+      <button mat-raised-button [mat-dialog-close]="true" cdkFocusInitial>Accept</button>
+    </mat-dialog-actions>
+</div>
